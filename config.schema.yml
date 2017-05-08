@@ -1,0 +1,17 @@
+---
+appliance:
+  type: object
+  properties:
+    target:
+      type: string
+      description: Management IP address of the target appliance to operate
+      required: true
+    userid:
+      type: string
+      description: Admin userid to login
+      required: true
+    passwd:
+      type: string
+      description: Password of the specified userid
+      secret: true
+      required: true
