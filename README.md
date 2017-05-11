@@ -1,6 +1,8 @@
 # ACOS Integration Pack
 This pack integrates the ACOS-based appliance of A10 Networks which support aXAPI v2.1 or v3.0.
 
+[![CircleCI](https://circleci.com/gh/StackStorm-Exchange/stackstorm-acos.svg?style=shield)](https://circleci.com/gh/StackStorm-Exchange/stackstorm-acos)
+
 ## Configuration
 You will need to specify a set of following credentials to connect.
 
