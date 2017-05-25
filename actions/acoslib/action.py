@@ -16,12 +16,12 @@ class BaseAction(Action):
 
         self.config = config
 
-    def login(self, str_api_version):
+    def login(self, str_api_version, appliance='default'):
         try:
-            return acos.Client(self.config['appliance']['target'],
+            return acos.Client(self.config['appliance'][appliance]['target'],
                                self._get_axapi_version(str_api_version),
-                               self.config['appliance']['userid'],
-                               self.config['appliance']['passwd'])
+                               self.config['appliance'][appliance]['userid'],
+                               self.config['appliance'][appliance]['passwd'])
         except acos.errors.ACOSUnsupportedVersion as e:
             self.logger.error(e)
         except KeyError as e:

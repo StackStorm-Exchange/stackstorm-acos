@@ -4,8 +4,8 @@ from acoslib.action import BaseAction
 
 
 class AXActionRunner(BaseAction):
-    def run(self, api_version, action, object_path, **kwargs):
-        client = self.login(api_version)
+    def run(self, api_version, action, object_path, appliance, **kwargs):
+        client = self.login(api_version, appliance)
         if client:
             try:
                 # transforms user parameters as needed

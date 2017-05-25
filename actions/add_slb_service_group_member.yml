@@ -44,3 +44,6 @@ parameters:
           - True
           - False
         default: True
+    appliance:
+        required: true
+        default: default

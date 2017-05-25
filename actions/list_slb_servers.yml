@@ -25,3 +25,6 @@ parameters:
         type: string
         immutable: true
         default: ''
+    appliance:
+        required: true
+        default: default

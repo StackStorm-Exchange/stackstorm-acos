@@ -41,3 +41,6 @@ parameters:
         default: True
     vrid:
         type: string
+    appliance:
+        required: true
+        default: default

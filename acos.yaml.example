@@ -1,5 +1,6 @@
 ---
 appliance:
-  target: 172.31.31.31
-  userid: admin
-  passwd: a10
+  default:
+    target: 172.31.31.31
+    userid: admin
+    passwd: a10

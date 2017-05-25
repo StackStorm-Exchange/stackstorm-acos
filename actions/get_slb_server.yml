@@ -25,3 +25,6 @@ parameters:
         type: string
         description: name of server to get
         required: true
+    appliance:
+        required: true
+        default: default

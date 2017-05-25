@@ -26,3 +26,6 @@ parameters:
         type: string
         description: name of VirtualServer to get
         required: true
+    appliance:
+        required: true
+        default: default

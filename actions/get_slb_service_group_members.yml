@@ -36,3 +36,6 @@ parameters:
         description: the port-number of server to get
         required: true
         default: 80
+    appliance:
+        required: true
+        default: default

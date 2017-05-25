@@ -57,3 +57,6 @@ parameters:
             - dst-ip-only-hash
             - dst-ip-hash
         default: round-robin
+    appliance:
+        required: true
+        default: default
