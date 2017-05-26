@@ -24,8 +24,24 @@ class ListSLBServersTestCase(ACOSBaseActionTestCase):
             'object_path': 'slb.server',
             'action': 'get',
             'name': 'hoge',
+            'appliance': 'default',
         }
         result = action.run(**params)
 
         self.assertTrue(result[0])
         self.assertEqual(result[1], 'test-result')
+
+    def test_list_slb_servers_with_invalid_appliance_parameter(self):
+        action = self.get_action_instance(self._full_config)
+
+        # execute action
+        params = {
+            'api_version': 'v3.0',
+            'object_path': 'slb.server',
+            'action': 'get',
+            'name': 'hoge',
+            'appliance': 'invisible-appliance',
+        }
+        result = action.run(**params)
+        self.assertFalse(result[0])
+        self.assertEqual(result[1], 'Failed to initilaize Client object of acos_client')
