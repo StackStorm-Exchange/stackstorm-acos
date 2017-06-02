@@ -27,5 +27,6 @@ parameters:
         description: name of VirtualServer to get
         required: true
     appliance:
-        required: true
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
         default: default

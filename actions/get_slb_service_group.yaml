@@ -16,7 +16,6 @@ parameters:
     api_version:
         type: string
         description: version number of aXAPI to request ACOS appliance
-        required: true
         enum:
             - v2.1
             - v3.0
@@ -26,5 +25,6 @@ parameters:
         description: name of ServiceGroup to get
         required: true
     appliance:
-        required: true
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
         default: default
