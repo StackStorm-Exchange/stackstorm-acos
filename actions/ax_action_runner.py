@@ -4,8 +4,8 @@ from acoslib.action import BaseAction
 
 
 class AXActionRunner(BaseAction):
-    def run(self, api_version, action, object_path, appliance, **kwargs):
-        client = self.login(api_version, appliance)
+    def do_run(self, action, object_path, target, **kwargs):
+        client = self.login(target)
         if client:
             try:
                 # transforms user parameters as needed
@@ -15,13 +15,27 @@ class AXActionRunner(BaseAction):
 
                 return (True, getattr(_target_obj, action)(**kwargs))
             except acos.errors.AuthenticationFailure:
-                return (False, 'An authentication error is occurr')
+                return (False, '[%s] An authentication error is occurr' % (target))
             except acos.errors.NotFound as e:
                 return (False, e)
             except AttributeError:
-                return (False, 'The acos_client has no interfaces for %s' % (object_path))
+                return (False, '[%s] The acos_client has no interfaces for %s' %
+                               (target, object_path))
         else:
-            return (False, 'Failed to initilaize Client object of acos_client')
+            return (False, '[%s] Failed to initilaize Client object of acos_client' % target)
+
+    def run(self, action, object_path, one_target, **kwargs):
+        if one_target or kwargs.get('appliance'):
+            return self.do_run(action, object_path, kwargs.get('appliance'), **kwargs)
+        else:
+            results = []
+            for config in self.config['appliance']:
+                results.append(self.do_run(action, object_path, config['target'], **kwargs))
+
+                if not results[-1][0]:
+                    return (False, results)
+
+            return (True, [x[1] for x in results])
 
     def _transform_params(self, client, object_path, action, **kwargs):
         if object_path == 'slb.service_group.member' and action == 'create':

@@ -1,6 +1,12 @@
 ---
 appliance:
-  default:
-    target: appliance_hostname
+  -
+    target: appliance_hostname1
     userid: admin
-    passwd: admin
+    passwd: hoge
+    api_version: v2.1
+  -
+    target: appliance_hostname2
+    userid: admin
+    passwd: fuga
+    api_version: v3.0

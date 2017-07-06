@@ -6,20 +6,17 @@ enabled: true
 entry_point: ax_action_runner.py
 parameters:
     action:
+        type: string
+        immutable: true
         default: get
-        type: string
-        immutable: true
     object_path:
-        default: slb.server
         type: string
         immutable: true
-    api_version:
-        type: string
-        description: version number of aXAPI to request ACOS appliance
-        enum:
-          - v2.1
-          - v3.0
-        default: v3.0
+        default: slb.server
+    one_target:
+        type: boolean
+        immutable: true
+        default: true
     name:
         type: string
         description: name of server to get

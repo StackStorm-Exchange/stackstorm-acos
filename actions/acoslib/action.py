@@ -1,5 +1,4 @@
 import acos_client as acos
-import re
 import logging
 
 from st2actions.runners.pythonrunner import Action
@@ -16,16 +15,20 @@ class BaseAction(Action):
 
         self.config = config
 
-    def login(self, str_api_version, appliance='default'):
+    def login(self, appliance):
         try:
-            return acos.Client(self.config['appliance'][appliance]['target'],
-                               self._get_axapi_version(str_api_version),
-                               self.config['appliance'][appliance]['userid'],
-                               self.config['appliance'][appliance]['passwd'])
+            config = next(x for x in self.config['appliance'] if x['target'] == appliance)
+            return acos.Client(config['target'],
+                               config['api_version'],
+                               config['userid'],
+                               config['passwd'])
         except acos.errors.ACOSUnsupportedVersion as e:
             self.logger.error(e)
         except KeyError as e:
             self.logger.error(e)
+        except StopIteration:
+            self.logger.error("Specified appliance(%s) doesn't exist in the configuration file " %
+                              appliance)
 
     def get_object(self, base_obj, object_path):
         obj = base_obj
@@ -38,14 +41,3 @@ class BaseAction(Action):
         for key, logger in logging.Logger.manager.loggerDict.items():
             if isinstance(logger, logging.Logger):
                 logger.setLevel(level)
-
-    def _get_axapi_version(self, api_version):
-        if re.match(r'[vV]?[a-z-_]*3\.0$', str(api_version)):
-            return acos.AXAPI_30
-        elif re.match(r'[vV]?[a-z-_]*2\.1$', str(api_version)):
-            return acos.AXAPI_21
-        else:
-            self.logger.warning("This uses default API version(%s), instead of specified one(%s)" %
-                                (self.DEFAULT_AXAPI_VERSION_STR, str(api_version)))
-
-            return self.DEFAULT_AXAPI_VERSION

@@ -1,10 +1,11 @@
 ---
 appliance:
   description: Appliance parameters to connect
-  type: object
+  type: array
   items:
     type: object
     required: true
+    additionalProperties: false
     properties:
       target:
         type: string
@@ -19,3 +20,11 @@ appliance:
         description: Password of the specified userid
         secret: true
         required: true
+      api_version:
+        type: string
+        description: version number of aXAPI to request ACOS appliance
+        required: false
+        enum:
+          - v2.1
+          - v3.0
+        default: v3.0
