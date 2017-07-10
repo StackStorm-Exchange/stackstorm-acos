@@ -40,4 +40,4 @@ parameters:
     appliance:
         type: string
         description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
-        default: default
+        required: true
