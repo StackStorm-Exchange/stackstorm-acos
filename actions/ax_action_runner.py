@@ -13,7 +13,7 @@ class AXActionRunner(BaseAction):
 
                 _target_obj = self.get_object(client, object_path)
 
-                return (True, getattr(_target_obj, action)(**kwargs))
+                return (True, getattr(_target_obj, action)(**self._filter_args(kwargs)))
             except acos.errors.AuthenticationFailure:
                 return (False, '[%s] An authentication error is occurr' % (target))
             except acos.errors.NotFound as e:
@@ -46,3 +46,9 @@ class AXActionRunner(BaseAction):
                 kwargs['status'] = client.slb.DOWN
 
         return kwargs
+
+    """
+    This filters parameters for ACOS pack to pass only available parameters to the ACOS Client.
+    """
+    def _filter_args(self, kwargs):
+        return {k: v for (k, v) in kwargs.items() if k not in self.PARAMS_FOR_PACK}
