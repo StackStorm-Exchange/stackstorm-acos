@@ -17,10 +17,12 @@ appliance:
 | params                        | description                                                     |
 |:------------------------------|:----------------------------------------------------------------|
 | add_slb_server                | register a server to the SLB                                    |
+| add_slb_server_port           | register a ServerPort to the SLB                                |
 | add_slb_service_group_member  | add a server to the ServiceGroup as a member                    |
 | add_slb_service_group         | register a ServiceGroup to the SLB                              |
 | add_slb_virtual_server        | Add a VirtualServer to SLB                                      |
 | del_slb_server                | remove a server which is registered in SLB                      |
+| del_slb_server_port           | remove a ServerPort which is registered in SLB                  |
 | del_slb_service_group_member  | remove a server to the ServiceGroup as a member                 |
 | del_slb_service_group         | remove a ServiceGroup from SLB                                  |
 | del_slb_virtual_server        | remove a VirutlServer from SLB                                  |
