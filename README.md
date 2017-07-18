@@ -16,10 +16,10 @@ appliance:
 ## Actions
 | params                        | description                                                     |
 |:------------------------------|:----------------------------------------------------------------|
-| add_slb_server                | register a server to the SLB                                    |
+| add_slb_server                | add a server to the SLB                                    |
 | add_slb_service_group_member  | add a server to the ServiceGroup as a member                    |
-| add_slb_service_group         | register a ServiceGroup to the SLB                              |
-| add_slb_virtual_server        | Add a VirtualServer to SLB                                      |
+| add_slb_service_group         | add a ServiceGroup to the SLB                              |
+| add_slb_virtual_server        | add a VirtualServer to SLB                                      |
 | add_slb_virtual_server_port   | add a VirtualServerPort to the VirtualServer in SLB             |
 | del_slb_server                | remove a server which is registered in SLB                      |
 | del_slb_service_group_member  | remove a server to the ServiceGroup as a member                 |
