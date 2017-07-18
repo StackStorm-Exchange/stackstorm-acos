@@ -20,10 +20,12 @@ appliance:
 | add_slb_service_group_member  | add a server to the ServiceGroup as a member                    |
 | add_slb_service_group         | register a ServiceGroup to the SLB                              |
 | add_slb_virtual_server        | Add a VirtualServer to SLB                                      |
+| add_slb_virtual_server_port   | add a VirtualServerPort to the VirtualServer in SLB             |
 | del_slb_server                | remove a server which is registered in SLB                      |
 | del_slb_service_group_member  | remove a server to the ServiceGroup as a member                 |
 | del_slb_service_group         | remove a ServiceGroup from SLB                                  |
 | del_slb_virtual_server        | remove a VirutlServer from SLB                                  |
+| del_slb_virtual_server_port   | remove a VirutlServerPort from the VirtualServer in SLB         |
 | get_slb_server                | get a Server information which is registered in SLB             |
 | get_slb_service_group_members | get members information which are belonged to the ServiceGroup  |
 | get_slb_service_group         | get a ServiceGroup information which is registered in SLB       |
