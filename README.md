@@ -4,24 +4,28 @@ This pack integrates the ACOS-based appliance of A10 Networks which support aXAP
 [![CircleCI](https://circleci.com/gh/StackStorm-Exchange/stackstorm-acos.svg?style=shield)](https://circleci.com/gh/StackStorm-Exchange/stackstorm-acos)
 
 ## Configuration
-You will need to specify a set of following credentials to connect.
+You will need to specify set(s) of credentials to connect. Here is an example of the configuration. You can specify multiple credentials in the configuration and distinguish it by the `appliance` parameter of each action.
 
 ```yaml
 appliance:
-  target: # IP address or hostname of appliance to connect
-  userid:
-  passwd:
+  -
+    target: 172.31.31.31 # IP address or hostname of appliance to connect
+    userid: admin
+    passwd: a10
+    api_version: v3.0
 ```
 
 ## Actions
 | params                        | description                                                     |
 |:------------------------------|:----------------------------------------------------------------|
 | add_slb_server                | add a server to the SLB                                    |
+| add_slb_server_port           | register a ServerPort to the SLB                                |
 | add_slb_service_group_member  | add a server to the ServiceGroup as a member                    |
 | add_slb_service_group         | add a ServiceGroup to the SLB                              |
 | add_slb_virtual_server        | add a VirtualServer to SLB                                      |
 | add_slb_virtual_server_port   | add a VirtualServerPort to the VirtualServer in SLB             |
 | del_slb_server                | remove a server which is registered in SLB                      |
+| del_slb_server_port           | remove a ServerPort which is registered in SLB                  |
 | del_slb_service_group_member  | remove a server to the ServiceGroup as a member                 |
 | del_slb_service_group         | remove a ServiceGroup from SLB                                  |
 | del_slb_virtual_server        | remove a VirutlServer from SLB                                  |

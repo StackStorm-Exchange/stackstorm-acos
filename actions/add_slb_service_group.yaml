@@ -6,21 +6,17 @@ enabled: true
 entry_point: ax_action_runner.py
 parameters:
     action:
+        type: string
+        immutable: true
         default: create
-        type: string
-        immutable: true
     object_path:
-        default: slb.service_group
         type: string
         immutable: true
-    api_version:
-        type: string
-        description: version number of aXAPI to request ACOS appliance
-        required: true
-        enum:
-            - v2.1
-            - v3.0
-        default: v3.0
+        default: slb.service_group
+    one_target:
+        type: boolean
+        immutable: true
+        default: true
     name:
         type: string
         description: name of ServiceGroup to add
@@ -28,7 +24,6 @@ parameters:
     protocol:
         type: string
         description: protocol of TCP or UDP
-        required: true
         enum:
             - tcp
             - udp
@@ -36,7 +31,6 @@ parameters:
     lb_method:
         type: string
         description: load balancing method, such as round-robin or weighted-rr
-        required: true
         enum:
             - round-robin
             - weighted-rr
@@ -57,3 +51,7 @@ parameters:
             - dst-ip-only-hash
             - dst-ip-hash
         default: round-robin
+    appliance:
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
+        required: true
