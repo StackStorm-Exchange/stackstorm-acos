@@ -1,0 +1,30 @@
+---
+appliance:
+  description: Appliance parameters to connect
+  type: array
+  items:
+    type: object
+    required: true
+    additionalProperties: false
+    properties:
+      target:
+        type: string
+        description: Management IP address of the target appliance to operate
+        required: true
+      userid:
+        type: string
+        description: Admin userid to login
+        required: true
+      passwd:
+        type: string
+        description: Password of the specified userid
+        secret: true
+        required: true
+      api_version:
+        type: string
+        description: version number of aXAPI to request ACOS appliance
+        required: false
+        enum:
+          - v2.1
+          - v3.0
+        default: v3.0

@@ -10,7 +10,7 @@ class ACOSBaseActionTestCase(BaseActionTestCase):
     def setUp(self):
         super(ACOSBaseActionTestCase, self).setUp()
 
-        self._full_config = yaml.safe_load(self.get_fixture_content('full.yml'))
+        self._full_config = yaml.safe_load(self.get_fixture_content('full.yaml'))
         self._log_handler = self.LogHandler()
 
     class LogHandler(logging.StreamHandler):
