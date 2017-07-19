@@ -1,0 +1,38 @@
+---
+name: del_slb_server_port
+runner_type: run-python
+description: remove a server-port to the SLB
+enabled: true
+entry_point: ax_action_runner.py
+parameters:
+    action:
+        type: string
+        immutable: true
+        default: delete
+    object_path:
+        type: string
+        immutable: true
+        default: slb.server.port
+    one_target:
+        type: boolean
+        immutable: true
+        default: true
+    server_name:
+        type: string
+        description: name of target Server to remove port
+        required: true
+    port:
+        type: string
+        description: port-number to remove
+        required: true
+    protocol:
+        type: string
+        description: protocol type to remove
+        enum:
+          - tcp
+          - udp
+        required: true
+    appliance:
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
+        required: true
