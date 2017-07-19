@@ -1,5 +1,7 @@
 ---
 appliance:
-  target: 172.31.31.31
-  userid: admin
-  passwd: a10
+  -
+    target: 172.31.31.31
+    userid: admin
+    passwd: a10
+    api_version: v3.0
