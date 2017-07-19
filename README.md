@@ -4,7 +4,7 @@ This pack integrates the ACOS-based appliance of A10 Networks which support aXAP
 [![CircleCI](https://circleci.com/gh/StackStorm-Exchange/stackstorm-acos.svg?style=shield)](https://circleci.com/gh/StackStorm-Exchange/stackstorm-acos)
 
 ## Configuration
-You will need to specify set(s) of credentials to connect. Here is an example of the configuratoin. You can specify multiple credentials in the configuration and distinguish it by the `appliance` parameter of each action.
+You will need to specify set(s) of credentials to connect. Here is an example of the configuration. You can specify multiple credentials in the configuration and distinguish it by the `appliance` parameter of each action.
 
 ```yaml
 appliance:
