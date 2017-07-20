@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.2
+
+* Added actions to add/delete VirtualServerPort on the VirtualServer in the SLB
+
 ## v0.2.1
 
 * Added actions to operate ServerPort in the SLB

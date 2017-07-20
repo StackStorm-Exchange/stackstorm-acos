@@ -1,0 +1,69 @@
+---
+name: del_slb_virtual_server_port
+pack: acos
+runner_type: run-python
+description: Remove virtual-server-port from the SLB
+enabled: true
+entry_point: ax_action_runner.py
+parameters:
+    action:
+        type: string
+        immutable: true
+        default: delete
+    object_path:
+        type: string
+        immutable: true
+        default: slb.virtual_server.vport
+    one_target:
+        type: boolean
+        immutable: true
+        default: true
+    name:
+        type: string
+        immutable: true
+        default: ''
+    virtual_server_name:
+        type: string
+        description: the name of VirtualServer to remove
+        required: true
+    protocol:
+        type: string
+        description: protocol of VirtualPort to remove
+        enum: 
+            - tcp
+            - udp
+            - others
+            - diameter
+            - dns-tcp
+            - dns-udp
+            - fast-http
+            - fix
+            - ftp
+            - ftp-proxy
+            - http
+            - https
+            - mlb
+            - mms
+            - mysql
+            - mssql
+            - radius
+            - rtsp
+            - sip
+            - sip-tcp
+            - sips
+            - smpp-tcp
+            - spdy
+            - spdys
+            - smtp
+            - ssl-proxy
+            - tcp-proxy
+            - tftp
+        required: true
+    port:
+        type: integer
+        description: port-number of VirtualPort to remove
+        required: true
+    appliance:
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
+        required: true
