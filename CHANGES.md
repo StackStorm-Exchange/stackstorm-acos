@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.3
+
+* Following acos-client v1.4.1 to operate SLB ServerPort through the AxAPI v3.0
+
 ## v0.2.2
 
 * Added actions to add/delete VirtualServerPort on the VirtualServer in the SLB

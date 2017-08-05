@@ -1,1 +1,1 @@
-acos-client==1.4.0
+acos-client==1.4.1
