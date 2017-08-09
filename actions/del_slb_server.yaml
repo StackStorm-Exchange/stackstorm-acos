@@ -1,6 +1,6 @@
 ---
 name: del_slb_server
-runner_type: run-python
+runner_type: python-script
 description: remove a server which is registered in SLB
 enabled: true
 entry_point: ax_action_runner.py

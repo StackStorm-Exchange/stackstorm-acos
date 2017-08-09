@@ -1,6 +1,6 @@
 ---
 name: del_slb_service_group
-runner_type: run-python
+runner_type: python-script
 description: remove a ServiceGroup from SLB
 enabled: true
 entry_point: ax_action_runner.py

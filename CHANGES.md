@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.4
+
+* Change runner type  from `run-python` to `python-script`
+
 ## v0.2.3
 
 * Following acos-client v1.4.1 to operate SLB ServerPort through the AxAPI v3.0

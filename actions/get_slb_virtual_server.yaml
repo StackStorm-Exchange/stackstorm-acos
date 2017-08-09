@@ -1,7 +1,7 @@
 ---
 name: get_slb_virtual_server
 pack: acos
-runner_type: run-python
+runner_type: python-script
 description: get VirtualServer which is registered in the SLB
 enabled: true
 entry_point: ax_action_runner.py

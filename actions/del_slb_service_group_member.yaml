@@ -1,7 +1,7 @@
 ---
 name: del_slb_service_group_member
 pack: acos
-runner_type: run-python
+runner_type: python-script
 description: remove a server to the ServiceGroup as a member
 enabled: true
 entry_point: ax_action_runner.py

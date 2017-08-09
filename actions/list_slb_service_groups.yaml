@@ -1,6 +1,6 @@
 ---
 name: list_slb_service_groups
-runner_type: run-python
+runner_type: python-script
 description: lists ServiceGroup entries which are registered in SLB
 enabled: true
 entry_point: ax_action_runner.py

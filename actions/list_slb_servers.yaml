@@ -1,6 +1,6 @@
 ---
 name: list_slb_servers
-runner_type: run-python
+runner_type: python-script
 description: lists servers which are registered in SLB
 enabled: true
 entry_point: ax_action_runner.py
