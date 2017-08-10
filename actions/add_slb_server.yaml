@@ -1,6 +1,6 @@
 ---
 name: add_slb_server
-runner_type: run-python
+runner_type: python-script
 description: register a server to the SLB 
 enabled: true
 entry_point: ax_action_runner.py

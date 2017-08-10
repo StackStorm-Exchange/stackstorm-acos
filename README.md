@@ -15,6 +15,11 @@ appliance:
     api_version: v3.0
 ```
 
+Copy [acos.yaml.example](./acos.yaml.example) to `/opt/stackstorm/configs/acos.yaml` and edit as required.
+
+After making changes to `acos.yaml`, you must tell StackStorm to load the new configuration, with
+`sudo st2ctl reload --register-configs`
+
 ## Actions
 | params                        | description                                                     |
 |:------------------------------|:----------------------------------------------------------------|

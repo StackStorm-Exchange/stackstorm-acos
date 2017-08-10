@@ -1,7 +1,7 @@
 ---
 name: del_slb_virtual_server_port
 pack: acos
-runner_type: run-python
+runner_type: python-script
 description: Remove virtual-server-port from the SLB
 enabled: true
 entry_point: ax_action_runner.py

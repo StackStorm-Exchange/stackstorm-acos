@@ -1,7 +1,7 @@
 ---
 name: get_slb_service_group_members
 pack: acos
-runner_type: run-python
+runner_type: python-script
 description: get members information which are belonged to the ServiceGroup
 enabled: true
 entry_point: ax_action_runner.py
