@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.5
+
+* Bump to fix git tagging issue. No code changes
+
 ## v0.2.4
 
 * Change runner type  from `run-python` to `python-script`

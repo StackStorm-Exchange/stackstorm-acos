@@ -1,12 +1,12 @@
 ---
 name: acos
 ref: acos
-description: StackStorm pack for ACOS-based appliances of A10 Networks.
+description: Manage ACOS-based appliances of A10 Networks.
 keywords:
   - acos
   - load balancer
   - ADC
   - network
-version: 0.2.4
+version: 0.2.5
 author: Hiroyasu OHYAMA
 email: user.localhost2000@gmail.com
