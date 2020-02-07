@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.6
+
+* Update acos-client dependency to 1.4.6 from 1.4.1
+* Add explicit support for Python 2 and 3
+
 ## v0.2.5
 
 * Bump to fix git tagging issue. No code changes
