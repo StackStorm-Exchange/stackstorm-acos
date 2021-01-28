@@ -25,6 +25,10 @@ jobs:
           name: Download dependencies
           command: |
             git clone -b master git://github.com/stackstorm-exchange/ci.git ~/ci
+            pushd ~/ci
+            git fetch origin pull/102/head:pr102
+            git checkout pr102
+            popd
             ~/ci/.circle/dependencies
       - run:
           name: Run tests (Python 2.7)
