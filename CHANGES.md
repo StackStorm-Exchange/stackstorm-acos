@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.0
+
+* Drop Python 2.7 support.
+
 ## v0.2.6
 
 * Update acos-client dependency to 1.4.6 from 1.4.1
