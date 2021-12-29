@@ -1,10 +1,8 @@
 import json
 import mock
-import re
 
 from acos_base_action_test_case import ACOSBaseActionTestCase
 from ax_action_runner import AXActionRunner
-from requests import Session
 from urllib.parse import urlparse
 
 RESP_SUCCESS = {'response': {'status': 'success'}}
@@ -243,7 +241,8 @@ class TestSLBServiceGroup_v3_0(ACOSBaseActionTestCase):
                 "name": "test-slb-service-group",
                 "protocol": "tcp",
                 "health-check-disable": 0,
-                "lb-method": "round-robin","stateless-auto-switch": 0
+                "lb-method": "round-robin",
+                "stateless-auto-switch": 0
             }
         }))
         self.assertEqual(self._sending_requests[0]['method'], 'POST')

@@ -3,7 +3,6 @@ import mock
 import yaml
 
 from st2tests.base import BaseActionTestCase
-from urllib.parse import urlparse
 
 
 class ACOSBaseActionTestCase(BaseActionTestCase):
@@ -39,7 +38,12 @@ class ACOSBaseActionTestCase(BaseActionTestCase):
         whether sending requests from each test have expected destination endpoint
         and expected parameters.
         """
+        ACOS_API_AUTH_PATH = [
+            '/services/rest/v2.1/?format=json&method=authenticate',
+            '/axapi/v3/auth'
+        ]
         self._sending_requests = []
+
         def _save_sending_request(api_url, method, params):
             self._sending_requests.append({
                 'url': api_url,
@@ -47,10 +51,6 @@ class ACOSBaseActionTestCase(BaseActionTestCase):
                 'params': params,
             })
 
-        ACOS_API_AUTH_PATH = [
-            '/services/rest/v2.1/?format=json&method=authenticate',
-            '/axapi/v3/auth'
-        ]
         def _mock_sending_request(api_url, method, params):
             mock_resp = mock.Mock()
             if method == 'POST' and any([x in api_url for x in ACOS_API_AUTH_PATH]):
@@ -68,8 +68,10 @@ class ACOSBaseActionTestCase(BaseActionTestCase):
 
         def get_side_effect(api_url, **kwargs):
             return _mock_sending_request(api_url, 'GET', kwargs)
+
         def post_side_effect(api_url, **kwargs):
             return _mock_sending_request(api_url, 'POST', kwargs)
+
         def delete_side_effect(api_url, **kwargs):
             return _mock_sending_request(api_url, 'DELETE', kwargs)
 
