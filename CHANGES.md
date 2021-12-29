@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.0
+
+* Update acos_client, which this pack depends on, version from v1.4.6 to v2.6.0
+  or later to be able to compatible with ACOS version up to v5.2.1 (#20)
+
 ## v1.0.0
 
 * Drop Python 2.7 support.
