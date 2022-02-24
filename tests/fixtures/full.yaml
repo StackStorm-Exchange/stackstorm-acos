@@ -1,12 +1,12 @@
 ---
 appliance:
   -
-    target: appliance_hostname1
+    target: appliance_acos_v2.1
     userid: admin
     passwd: hoge
     api_version: v2.1
   -
-    target: appliance_hostname2
+    target: appliance_acos_v3.0
     userid: admin
     passwd: fuga
     api_version: v3.0

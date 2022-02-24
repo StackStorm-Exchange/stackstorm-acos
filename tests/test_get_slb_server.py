@@ -28,7 +28,7 @@ class GetSLBServerTestCase(ACOSBaseActionTestCase):
             'action': 'get',
             'name': 'hoge',
             'one_target': True,
-            'appliance': 'appliance_hostname1',
+            'appliance': 'appliance_acos_v2.1',
         }
         result = self.action.run(**params)
 
