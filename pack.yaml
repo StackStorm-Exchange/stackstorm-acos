@@ -7,7 +7,7 @@ keywords:
   - load balancer
   - ADC
   - network
-version: 1.1.0
+version: 1.2.0
 author: Hiroyasu OHYAMA
 email: user.localhost2000@gmail.com
 python_versions:

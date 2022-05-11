@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0
+
+* Added actions to operate IP address of NAT pool
+
 ## v1.1.0
 
 * Update acos_client, which this pack depends on, version from v1.4.6 to v2.6.0
