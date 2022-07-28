@@ -4,8 +4,11 @@ from acoslib.action import BaseAction
 
 
 class AXActionRunner(BaseAction):
-    def do_run(self, action, object_path, target, **kwargs):
-        client = self.login(target)
+    def do_run(self, action, object_path, appliance, specified_target, **kwargs):
+        target = appliance
+        if specified_target:
+            target = specified_target.get("target")
+        client = self.login(appliance, specified_target)
         if client:
             try:
                 # transforms user parameters as needed
@@ -25,8 +28,12 @@ class AXActionRunner(BaseAction):
             return (False, '[%s] Failed to initilaize Client object of acos_client' % target)
 
     def run(self, action, object_path, one_target, **kwargs):
-        if one_target or kwargs.get('appliance'):
-            return self.do_run(action, object_path, kwargs.get('appliance'), **kwargs)
+        if one_target or kwargs.get('appliance') or kwargs.get('specified_target'):
+            return self.do_run(
+                action,
+                object_path,
+                **kwargs
+            )
         else:
             results = []
             for config in self.config['appliance']:

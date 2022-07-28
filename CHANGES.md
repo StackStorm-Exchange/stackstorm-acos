@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.0
+* Add `specified_target` parameter to all actions.
+
 ## v1.1.0
 
 * Update acos_client, which this pack depends on, version from v1.4.6 to v2.6.0
