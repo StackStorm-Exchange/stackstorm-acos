@@ -1,0 +1,45 @@
+---
+name: create_ip_nat_pool
+runner_type: python-script
+description: create configuration of IP address of NAT pool
+enabled: true
+entry_point: ax_action_runner.py
+parameters:
+    action:
+        type: string
+        immutable: true
+        default: create
+    object_path:
+        type: string
+        immutable: true
+        default: nat.pool
+    one_target:
+        type: boolean
+        immutable: true
+        default: false
+    appliance:
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
+    pool_name:
+        type: string
+        description: Pool name or pool group
+        required: true
+    start_address:
+        type: string
+        description: Start IP address of NAT pool
+        required: true
+    end_address:
+        type: string
+        description: End IP address of NAT pool
+        required: true
+    netmask:
+        type: string
+        description: Netmask for NAT pool
+        required: true
+    ip_rr:
+        type: boolean
+        description: IP address round-robin behavior
+        default: False
+    vrid:
+        type: integer
+        description: VRRP-A vrid (Specify ha VRRP-A vrid)

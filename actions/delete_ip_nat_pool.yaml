@@ -1,0 +1,26 @@
+---
+name: delete_ip_nat_pool
+runner_type: python-script
+description: delete configuration of IP address of NAT pool
+enabled: true
+entry_point: ax_action_runner.py
+parameters:
+    action:
+        type: string
+        immutable: true
+        default: delete
+    object_path:
+        type: string
+        immutable: true
+        default: nat.pool
+    one_target:
+        type: boolean
+        immutable: true
+        default: false
+    appliance:
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
+    name:
+        type: string
+        description: pool-name to delete IP address of NAT pool
+        required: true
