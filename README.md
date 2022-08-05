@@ -29,16 +29,20 @@ After making changes to `acos.yaml`, you must tell StackStorm to load the new co
 | add_slb_service_group         | add a ServiceGroup to the SLB                              |
 | add_slb_virtual_server        | add a VirtualServer to SLB                                      |
 | add_slb_virtual_server_port   | add a VirtualServerPort to the VirtualServer in SLB             |
+| create_ip_nat_pool            | create configuration of IP address of NAT pool                  |
 | del_slb_server                | remove a server which is registered in SLB                      |
 | del_slb_server_port           | remove a ServerPort which is registered in SLB                  |
 | del_slb_service_group_member  | remove a server to the ServiceGroup as a member                 |
 | del_slb_service_group         | remove a ServiceGroup from SLB                                  |
 | del_slb_virtual_server        | remove a VirutlServer from SLB                                  |
 | del_slb_virtual_server_port   | remove a VirutlServerPort from the VirtualServer in SLB         |
+| delete_ip_nat_pool            | delete configuration of IP address of NAT pool                  |
+| get_ip_nat_pool               | get configuration of IP address of NAT pool                     |
 | get_slb_server                | get a Server information which is registered in SLB             |
 | get_slb_service_group_members | get members information which are belonged to the ServiceGroup  |
 | get_slb_service_group         | get a ServiceGroup information which is registered in SLB       |
 | get_slb_virtual_server        | get VirtualServer which is registered in the SLB                |
+| list_ip_nat_pool              | list configurations of IP address of NAT pool                   |
 | list_slb_servers              | lists servers which are registered in SLB                       |
 | list_slb_service_groups       | lists ServiceGroup entries which are registered in SLB          |
 | list_slb_virtual_servers      | list VirtualServers which are registered in the SLB             |

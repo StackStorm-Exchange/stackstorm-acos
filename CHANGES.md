@@ -2,6 +2,7 @@
 
 ## v1.2.0
 * Add `specified_target` parameter to all actions.
+* Added actions to operate IP address of NAT pool
 
 ## v1.1.0
 
