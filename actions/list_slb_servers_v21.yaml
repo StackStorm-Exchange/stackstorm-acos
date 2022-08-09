@@ -1,0 +1,29 @@
+---
+name: list_slb_servers_v21
+runner_type: python-script
+description: lists servers which are registered in SLB
+enabled: true
+entry_point: ax_action_runner.py
+parameters:
+    action:
+        type: string
+        immutable: true
+        default: all
+    object_path:
+        type: string
+        immutable: true
+        default: slb.server
+    name:
+        type: string
+        immutable: true
+        default: ''
+    one_target:
+        type: boolean
+        immutable: true
+        default: false
+    appliance:
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
+    specified_target:
+        type: object
+        description: "Specify the target dynamically, (key: 'target', 'api_version', 'userid', 'passwd')" 
