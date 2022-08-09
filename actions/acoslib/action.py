@@ -9,7 +9,7 @@ class BaseAction(Action):
     DEFAULT_AXAPI_VERSION = acos.AXAPI_30
 
     # These are the parameters for acos pack, not used by the ACOS Client
-    PARAMS_FOR_PACK = ['appliance', 'action', 'object_path', 'one_target']
+    PARAMS_FOR_PACK = ['appliance', 'action', 'object_path', 'one_target', 'specified_target']
 
     def __init__(self, config):
         super(BaseAction, self).__init__(config)
