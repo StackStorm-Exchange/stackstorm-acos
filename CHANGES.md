@@ -3,6 +3,7 @@
 ## v1.2.0
 * Add `specified_target` parameter to all actions.
 * Added actions to operate IP address of NAT pool
+* Fixed failed action of list slb on v2.1
 
 ## v1.1.0
 
