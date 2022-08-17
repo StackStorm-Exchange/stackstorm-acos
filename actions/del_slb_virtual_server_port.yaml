@@ -67,3 +67,6 @@ parameters:
         type: string
         description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
         required: true
+    specified_target:
+        type: object
+        description: "Specify the target dynamically, (key: 'target', 'api_version', 'userid', 'passwd')"

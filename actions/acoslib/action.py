@@ -9,7 +9,7 @@ class BaseAction(Action):
     DEFAULT_AXAPI_VERSION = acos.AXAPI_30
 
     # These are the parameters for acos pack, not used by the ACOS Client
-    PARAMS_FOR_PACK = ['appliance', 'action', 'object_path', 'one_target']
+    PARAMS_FOR_PACK = ['appliance', 'action', 'object_path', 'one_target', 'specified_target']
 
     def __init__(self, config):
         super(BaseAction, self).__init__(config)
@@ -18,9 +18,12 @@ class BaseAction(Action):
 
         self.config = config
 
-    def login(self, appliance):
+    def login(self, target, specified_target=None):
         try:
-            config = next(x for x in self.config['appliance'] if x['target'] == appliance)
+            if specified_target:
+                config = specified_target
+            else:
+                config = next(x for x in self.config['appliance'] if x['target'] == target)
             return acos.Client(config['target'],
                                config['api_version'],
                                config['userid'],
@@ -31,7 +34,7 @@ class BaseAction(Action):
             self.logger.error(e)
         except StopIteration:
             self.logger.error("Specified appliance(%s) doesn't exist in the configuration file " %
-                              appliance)
+                              target)
 
     def get_object(self, base_obj, object_path):
         obj = base_obj
