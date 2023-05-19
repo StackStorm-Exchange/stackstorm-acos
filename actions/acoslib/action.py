@@ -24,10 +24,19 @@ class BaseAction(Action):
                 config = specified_target
             else:
                 config = next(x for x in self.config['appliance'] if x['target'] == target)
+
+            extra_params = {
+                "max_retries": config.get("max_retries", 3),
+                "port": config.get("port", 443),
+                "protocol": config.get("protocol", "https"),
+                "timeout": config.get("timeout", 5),
+            }
+
             return acos.Client(config['target'],
                                config['api_version'],
                                config['userid'],
-                               config['passwd'])
+                               config['passwd'],
+                               **extra_params)
         except acos.errors.ACOSUnsupportedVersion as e:
             self.logger.error(e)
         except KeyError as e:
