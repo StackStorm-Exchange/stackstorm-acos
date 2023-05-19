@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.5.0
+
+* Enabled to pass parameters how to connect ACOS appliance
+
 ## v1.4.0
 
 * Added actions to get slb template lists.
