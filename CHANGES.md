@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.4.0
+
+* Added actions to get slb template lists.
+
 ## v1.3.0
 
 * Add `specified_target` parameter to all actions.
