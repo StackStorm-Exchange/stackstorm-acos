@@ -1,0 +1,54 @@
+---
+name: update_slb_service_group_member
+pack: acos
+runner_type: python-script
+description: update a server to the ServiceGroup as a member
+enabled: true
+entry_point: ax_action_runner.py
+parameters:
+    action:
+        type: string
+        immutable: true
+        default: update
+    object_path:
+        type: string
+        immutable: true
+        default: slb.service_group.member
+    one_target:
+        type: boolean
+        immutable: true
+        default: true
+    service_group_name:
+        type: string
+        description: the ServiceGroup name to register a member
+        required: true
+    server_name:
+        type: string
+        description: the name of server to update
+        default: ''
+    server_port:
+        type: integer
+        description: the port-number of server to update
+        default: 80
+    status:
+        type: boolean
+        description: when 'True' is set, then statical data collection will be enabled
+        enum:
+          - True
+          - False
+        default: True
+    member_state:
+        type: boolean
+        description: when 'True' is set, then member service port will be enabled
+        enum:
+          - True
+          - False
+        default: True
+    appliance:
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
+        required: true
+    specified_target:
+        type: object
+        description: "Specify the target dynamically, (key: 'target', 'api_version', 'userid', 'passwd')"
+
