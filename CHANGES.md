@@ -1,5 +1,11 @@
 # Changelog
 
+
+## v1.6.0
+
+* Added "member_state" parameter at the "acos.acos_slb_service_group_member" action
+  for setting registered member state.
+
 ## v1.5.0
 
 * Enabled to pass parameters how to connect ACOS appliance

@@ -32,7 +32,14 @@ parameters:
         default: 80
     status:
         type: boolean
-        description: the status of taradd memmber to add
+        description: when 'True' is set, then statical data collection will be enabled
+        enum:
+          - True
+          - False
+        default: True
+    member_state:
+        type: boolean
+        description: when 'True' is set, then member service port will be enabled
         enum:
           - True
           - False
