@@ -1,5 +1,5 @@
 ---
-name: update_slb_virtual_server_port
+name: update_slb_virtual_server
 pack: acos
 runner_type: python-script
 description: Update SLB virtual-server configuration
