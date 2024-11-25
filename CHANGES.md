@@ -1,5 +1,7 @@
 # Changelog
 
+## v1.7.0
+* Added an action (update_slb_virtul_server) to update SLB virtual-server.
 
 ## v1.6.0
 
