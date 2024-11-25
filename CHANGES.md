@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.8.0
+* Enabled to set health_check parameter at the add_slb_server action.
+
 ## v1.7.0
 * Added an action (update_slb_virtul_server) to update SLB virtual-server.
 

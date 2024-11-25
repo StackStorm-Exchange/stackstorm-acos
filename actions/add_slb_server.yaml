@@ -39,3 +39,7 @@ parameters:
     specified_target:
         type: object
         description: "Specify the target dynamically, (key: 'target', 'api_version', 'userid', 'passwd')"
+    health_check:
+        type: string
+        description: name of health monitor for adding Server
+        default: ping
