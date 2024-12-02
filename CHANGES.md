@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.9.0
+* Added an action (list_slb_http_templates) to show SLB http-template.
+
 ## v1.8.0
 * Enabled to set health_check parameter at the add_slb_server action.
 
