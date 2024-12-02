@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.9.0
+* Added an action (list_slb_http_templates) to show SLB http-template.
+
 ## v1.7.0
 * Added an action (update_slb_virtul_server) to update SLB virtual-server.
 
