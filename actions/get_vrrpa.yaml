@@ -1,7 +1,7 @@
 ---
-name: get_interface
+name: get_vrrpa
 runner_type: python-script
-description: get configuration of IP address of Interface
+description: get configuration of VRRPA
 enabled: true
 entry_point: ax_action_runner.py
 parameters:
@@ -12,7 +12,7 @@ parameters:
     object_path:
         type: string
         immutable: true
-        default: interface
+        default: vrrpa
     one_target:
         type: boolean
         immutable: true
