@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.10.0
+* Added action to get interface.
+* Added action to get vrrpa.
+
 ## v1.9.0
 * Added an action (list_slb_http_templates) to show SLB http-template.
 

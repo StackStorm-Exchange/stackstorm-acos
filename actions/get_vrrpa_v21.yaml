@@ -1,0 +1,25 @@
+---
+name: get_vrrpa_v21
+runner_type: python-script
+description: get configuration of VRRPA
+enabled: true
+entry_point: ax_action_runner.py
+parameters:
+    action:
+        type: string
+        immutable: true
+        default: get
+    object_path:
+        type: string
+        immutable: true
+        default: vrrpa.vrrpa_global
+    one_target:
+        type: boolean
+        immutable: true
+        default: false
+    appliance:
+        type: string
+        description: The appliance information to connect, which is specified at the 'appliance' parameter in the configuration.
+    specified_target:
+        type: object
+        description: "Specify the target dynamically, (key: 'target', 'api_version', 'userid', 'passwd')"
