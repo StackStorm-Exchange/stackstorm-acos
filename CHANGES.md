@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.11.0
+* Added action to get nat inside.
+* Added action to get accesslist.
+
 ## v1.10.0
 * Added action to get interface.
 * Added action to get vrrpa.
