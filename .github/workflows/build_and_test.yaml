@@ -14,4 +14,4 @@ jobs:
     with:
       enable-common-libs: true
       #apt-cache-version: v0
-      #py-cache-version: v0
+      py-cache-version: v1
